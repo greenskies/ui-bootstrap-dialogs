@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="manifest" href="build/manifest.json">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body ng-controller="controller">
+    <button ng-click="click()">Confirm</button>
+    <button ng-click="alert()">Alert</button>
+    <button ng-click="prompt()">Prompt</button>
+</body>
+
+<script src="build/angular.js"></script>
+<script src="build/ui.bootstrap.dialogs.js"></script>
+<script>
+    angular.module('app', ['ui.bootstrap', 'ui.bootstrap.dialogs'])
+    .controller('controller', function($scope, $dialogAlert, $dialogConfirm, $dialogPrompt){
+        $scope.click = function () {
+            const options = {
+                title: 'Hardy Har Har',
+                size: 'lg'
+            };
+            $dialogConfirm('Please confirm me', options);
+        };
+
+        $scope.alert = function() {
+            const options = {
+                title: 'This is an <strong>alert</strong>',
+                size: 'med',
+                alert: 'alert-danger'
+            };
+            $dialogAlert('alerted', options);
+        };
+
+        $scope.prompt = function() {
+            $dialogPrompt('prompted <strong>Something</strong>')
+                .then(function(output){
+                    console.log(output);
+                });
+        };
+
+
+    });
+</script>
+
+
+</html>
