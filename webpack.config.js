@@ -14,13 +14,4 @@ Encore
 const devConfig = Encore.getWebpackConfig();
 devConfig.name = "devConfig";
 
-Encore.setPublicPath("/pics3/current/public/build").enableSourceMaps(false).enableVersioning();
-
-const prodConfig = Encore.getWebpackConfig();
-prodConfig.name = "prodConfig";
-
-Encore.setPublicPath("/stage/pics3/current/public/build").enableSourceMaps(false).enableVersioning();
-const stageConfig = Encore.getWebpackConfig();
-stageConfig.name = "stageConfig";
-
-module.exports = [devConfig, prodConfig, stageConfig];
+module.exports = devConfig;
