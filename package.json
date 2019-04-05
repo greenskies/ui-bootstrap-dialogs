@@ -1,8 +1,8 @@
 {
-  "name": "ui.bootstrap.dialog",
+  "name": "ui.bootstrap.dialogs",
   "version": "0.1.0",
   "description": "A modal dialog helper for ui.bootstrap",
-  "main": "ui.bootstrap.dialogs.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/greenskies/ui-bootstrap-dialogs.git"
