@@ -1,4 +1,23 @@
 {
+  "name": "ui.bootstrap.dialog",
+  "version": "0.1.0",
+  "description": "A modal dialog helper for ui.bootstrap",
+  "main": "ui.bootstrap.dialogs.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greenskies/ui-bootstrap-dialogs.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "modal",
+    "dialog"
+  ],
+  "author": "Todd Eidson <todd@eidson.info>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/greenskies/ui-bootstrap-dialogs/issues"
+  },
+  "homepage": "https://github.com/greenskies/ui-bootstrap-dialogs#readme",
   "scripts": {
     "test": "./node_modules/.bin/karma start ./karma.conf.js",
     "dev": "./node_modules/.bin/encore dev --config-name devConfig",
