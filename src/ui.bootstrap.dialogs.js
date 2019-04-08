@@ -14,8 +14,8 @@ angular
                     </div>
                     <div class="modal-body" ng-bind-html="message"></div>
                     <div class="modal-footer">
-                        <button class="btn btn-default" ng-click="modal.dismiss()">{{ denyLabel }}</button>
-                        <button class="btn btn-primary" ng-click="modal.close()">{{ confirmLabel }}</button>
+                        <button class="btn btn-default {{ button_size }}" ng-click="modal.dismiss()">{{ denyLabel }}</button>
+                        <button class="btn btn-primary {{ button_size }}" ng-click="modal.close()">{{ confirmLabel }}</button>
                     </div>
                 `,
         controller: function($scope, $uibModalInstance) {
@@ -26,7 +26,8 @@ angular
             alert: "alert-info",
             size: "sm",
             confirmLabel: "Yes",
-            denyLabel: "No"
+            denyLabel: "No",
+            button_size: ""
           });
           resolver.resolve(options).then(options => {
             $scope.title = $sce.trustAsHtml(options.title);
@@ -34,6 +35,7 @@ angular
             $scope.confirmLabel = options.confirmLabel;
             $scope.denyLabel = options.denyLabel;
             $scope.message = $sce.trustAsHtml(message);
+            $scope.button_size = options.button_size;
           });
         }
       });
@@ -53,7 +55,7 @@ angular
                     </div>
                     <div class="modal-body" ng-bind-html="message"></div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary" ng-click="modal.close()">{{ confirmLabel }}</button>
+                        <button class="btn btn-primary {{ button_size }}" ng-click="modal.close()">{{ confirmLabel }}</button>
                     </div>
                 `,
         controller: function($scope, $uibModalInstance, $sce) {
@@ -63,13 +65,15 @@ angular
             title: "Message",
             alert: "alert-info",
             size: "sm",
-            confirmLabel: "Ok"
+            confirmLabel: "Ok",
+            button_size: ""
           });
           resolver.resolve(options).then(options => {
             $scope.title = $sce.trustAsHtml(options.title);
             $scope.alert = options.alert;
             $scope.confirmLabel = options.confirmLabel;
             $scope.message = $sce.trustAsHtml(message);
+            $scope.button_size = options.button_size;
           });
         }
       });
@@ -93,8 +97,8 @@ angular
                     <input type="text" ng-model="output" class="form-control">
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-default" ng-click="modal.dismiss()">{{ denyLabel }}</button>
-                    <button class="btn btn-primary" ng-click="modal.close(output)">{{ confirmLabel }}</button>
+                    <button class="btn btn-default {{ button_size }}" ng-click="modal.dismiss()">{{ denyLabel }}</button>
+                    <button class="btn btn-primary {{ button_size }}" ng-click="modal.close(output)">{{ confirmLabel }}</button>
                 </div>
             `,
         controller: function($scope, $uibModalInstance) {
@@ -105,7 +109,8 @@ angular
             alert: "alert-info",
             size: "sm",
             confirmLabel: "Ok",
-            denyLabel: "Cancel"
+            denyLabel: "Cancel",
+            button_size: ""
           });
           resolver.resolve(options).then(options => {
             $scope.title = $sce.trustAsHtml(options.title);
@@ -113,6 +118,7 @@ angular
             $scope.confirmLabel = options.confirmLabel;
             $scope.denyLabel = options.denyLabel;
             $scope.message = $sce.trustAsHtml(message);
+            $scope.button_size = options.button_size;
           });
         }
       });
